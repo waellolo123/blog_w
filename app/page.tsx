@@ -1,6 +1,7 @@
 import Image from "next/image"
 import getCurrentUser from "./actions/getCurrentUser"
 import getBlogs from "./actions/getBlogs"
+import SingleBlog from "@/components/blog/SingleBlog";
 
 
 
@@ -11,10 +12,9 @@ export default async function Home() {
 
   return (
     <main className="">
-      {blogs.map((blog)=>(
-        <div></div>
+      {blogs.map((item)=>(
+        <SingleBlog data={item}  key={item.id} currentUser={currentUser}/>
       ))}
-      <h1>Home</h1>
     </main>
   )
 }

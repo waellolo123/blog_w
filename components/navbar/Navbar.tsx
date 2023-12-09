@@ -2,6 +2,7 @@
 
 "use client";
 
+import { SafeUser } from "@/types";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import Link from "next/link";
 
 
 interface UserMenuProps{
-  currentUser: User | null;
+  currentUser: SafeUser | null;
 }
 
 const Navbar = ({currentUser}: UserMenuProps) => {
